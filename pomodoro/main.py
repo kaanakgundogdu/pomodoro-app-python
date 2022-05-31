@@ -30,7 +30,6 @@ def reset_timer():
 def start_timer():
     global reps, is_timer_works
     if is_timer_works:
-        print("wait")
         return
 
     minute = 60
@@ -67,7 +66,7 @@ def count_down(count):
     canvas.itemconfig(timer_text, text=f"{minutes}:{seconds}")
 
     if count > 0:
-        timer = window.after(1, count_down, count - 1)
+        timer = window.after(1000, count_down, count - 1)
     else:
         is_timer_works = False
         start_timer()
